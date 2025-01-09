@@ -63,3 +63,29 @@ const images = [
     description: "Lighthouse Coast Sea",
   },
 ];
+
+const galleryList = document.querySelector(".gallery");
+// 1 варіант
+const elementsArray = images.map((element) => {
+  // Створюємо li і додаємо клас
+  const addListItem = document.createElement("li");
+  addListItem.classList.add("gallery-item");
+  // Створюємо тег a і додаємо клас та href
+  const imgLink = document.createElement("a");
+  imgLink.classList.add("gallery-link");
+  imgLink.href = element.original;
+  // Створюємо тег img p з потрібними атрибутами чи як їх там
+  const addImage = document.createElement("img");
+  addImage.alt = element.description;
+  addImage.src = element.preview;
+  addImage.width = "360";
+  addImage.height = "200";
+  addImage.classList.add("gallery-image");
+  addImage.dataset.source = element.original;
+  // Вкладаємо елементи один в один і повертаємо li
+  imgLink.appendChild(addImage);
+  addListItem.appendChild(imgLink);
+  return addListItem;
+});
+
+galleryList.append(...elementsArray);
