@@ -5,6 +5,7 @@
 img {
   display: block;
   object-fit: cover;
+  overflow: hidden;
 }
 
 h1,
@@ -31,4 +32,18 @@ ol {
   gap: 24px;
   padding: 24px;
   margin: 24px auto;
+}
+
+.gallery-item {
+}
+.gallery-link {
+}
+
+.gallery-image {
+  transition: transform 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.gallery-image:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05);
 }
