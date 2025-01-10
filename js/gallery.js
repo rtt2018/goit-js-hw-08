@@ -94,12 +94,17 @@ galleryList.addEventListener("click", openModalWindow);
 
 function openModalWindow(event) {
   event.preventDefault();
-  if (event.target) {
+  if (event.target !== event.currentTarget) {
     const instance = basicLightbox.create(`
       <p class="modal-header">${event.target.alt}</p>
       <img src="${event.target.dataset.source}" width="1112" height="640">
     `);
 
     instance.show();
+
+    const modalContent = instance.element();
+    modalContent.addEventListener("click", () => {
+      instance.close();
+    });
   }
 }
