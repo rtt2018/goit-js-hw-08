@@ -103,8 +103,7 @@ function openModalWindow(event) {
 
     instance.show();
 
-    const modalContent = instance.element();
-    modalContent.addEventListener("click", () => {
+    instance.element().addEventListener("click", () => {
       instance.close();
     });
   }
