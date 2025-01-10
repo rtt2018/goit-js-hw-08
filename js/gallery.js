@@ -99,6 +99,7 @@ function openModalWindow(event) {
       <p class="modal-header">${event.target.alt}</p>
       <img src="${event.target.dataset.source}" width="1112" height="640">
     `);
+    instance.element().classList.add("modal-overlay");
 
     instance.show();
 
