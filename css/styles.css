@@ -30,22 +30,18 @@ ol {
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
-  padding: 24px;
   margin: 24px auto;
+  max-width: 1128px;
 }
 
-.gallery-item:hover {
-}
-.gallery-link {
-}
-
-.gallery-image {
+.gallery-item {
+  overflow: hidden;
   transition: transform 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.gallery-image:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+.gallery-item:hover {
   transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .modal-header {
